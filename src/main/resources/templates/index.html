@@ -21,6 +21,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Тип</th>
                 <th scope="col">Происшествие</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Адрес</th>
@@ -29,6 +30,7 @@
             <tbody>
             <tr  th:each="accident : ${accidents}">
                 <th scope="row" th:text="${accident.id}"></th>
+                <td th:text="${accident.type.name}"></td>
                 <td>
                     <a th:href="@{/editAccident/{accidentId}(accidentId=${accident.id})}" th:text="${accident.name}"></a>
                 </td>
