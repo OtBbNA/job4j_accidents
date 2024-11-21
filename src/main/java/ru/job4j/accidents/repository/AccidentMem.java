@@ -39,14 +39,12 @@ public class AccidentMem implements AccidentRepository {
 
     @Override
     public boolean update(Accident accident) {
-        return accidents.computeIfPresent(accident.getId(), (id, oldAccident) -> {
-            return new Accident(
-                    oldAccident.getId(),
-                    accident.getName(),
-                    accident.getText(),
-                    accident.getAddress()
-            );
-        }) != null;
+        return accidents.computeIfPresent(accident.getId(), (id, oldAccident) -> new Accident(
+                oldAccident.getId(),
+                accident.getName(),
+                accident.getText(),
+                accident.getAddress()
+        )) != null;
     }
 
     @Override
