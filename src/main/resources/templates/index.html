@@ -30,7 +30,9 @@
             <tbody>
             <tr  th:each="accident : ${accidents}">
                 <th scope="row" th:text="${accident.id}"></th>
-                <td th:text="${accident.type.name}"></td>
+                <td th:each="type : ${types}"
+                    th:if="${type.id == accident.typeId}"
+                    th:text="${type.name}"></td>
                 <td>
                     <a th:href="@{/editAccident/{accidentId}(accidentId=${accident.id})}" th:text="${accident.name}"></a>
                 </td>

@@ -8,26 +8,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.accidents.model.Accident;
-import ru.job4j.accidents.model.AccidentType;
 import ru.job4j.accidents.service.AccidentService;
-
-import java.util.ArrayList;
-import java.util.List;
+import ru.job4j.accidents.service.TypeService;
 
 @Controller
 @AllArgsConstructor
 public class AccidentController {
 
     private final AccidentService accidents;
+    private final TypeService types;
 
     @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
-        List<AccidentType> types = new ArrayList<>();
-        types.add(new AccidentType(1, "Две машины"));
-        types.add(new AccidentType(2, "Машина и человек"));
-        types.add(new AccidentType(3, "Машина и имущество"));
-        types.add(new AccidentType(4, "ПДД"));
-        model.addAttribute("types", types);
+        model.addAttribute("types", types.findAll());
         return "accident/createAccident";
     }
 
@@ -44,6 +37,8 @@ public class AccidentController {
             model.addAttribute("message", "Что-то пошло не так, возможно инцидент уже обработан");
             return "error/404";
         }
+        model.addAttribute("accident", accident);
+        model.addAttribute("types", types.findAll());
         return "accident/editAccident";
     }
 

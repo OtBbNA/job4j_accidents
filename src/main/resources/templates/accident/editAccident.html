@@ -36,6 +36,16 @@
                         <label for="address">Укажите адрес, где произошло нарушение</label>
                         <input type="text" class="form-control" name="address" id="address" th:field="*{address}">
                     </div>
+                    <div class="form-group">
+                        <label for="type">Тип</label>
+                        <select class="form-control" id="type" name="typeId">
+                            <option th:each="type: ${types}"
+                                    th:text="${type.name}"
+                                    th:value="${type.id}"
+                                    th:filed="${typeId}"
+                                    th:selected="${type.id==typeId}"></option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
                 </form>
             </div>
