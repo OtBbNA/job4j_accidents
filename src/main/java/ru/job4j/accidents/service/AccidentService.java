@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface AccidentService {
 
-    Accident create(Accident accident);
+    Accident create(Accident accident, String[] ruleIds);
 
     void deleteById(int id);
 
-    boolean update(Accident accident);
+    boolean update(Accident accident, String[] ruleIds);
 
     Optional<Accident> findById(int id);
 
