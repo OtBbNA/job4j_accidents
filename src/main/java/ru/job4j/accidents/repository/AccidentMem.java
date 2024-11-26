@@ -1,5 +1,6 @@
 package ru.job4j.accidents.repository;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
@@ -10,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
+@AllArgsConstructor
 public class AccidentMem implements AccidentRepository {
 
     private final AtomicInteger nextId = new AtomicInteger(0);

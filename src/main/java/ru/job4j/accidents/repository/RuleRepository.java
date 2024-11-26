@@ -7,6 +7,10 @@ import java.util.Optional;
 
 public interface RuleRepository {
 
+    Rule create(Rule rule);
+
+    void deleteById(int id);
+
     Optional<Rule> findById(int id);
 
     Collection<Rule> findAll();

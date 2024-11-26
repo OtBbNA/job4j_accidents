@@ -4,25 +4,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.AccidentType;
-import ru.job4j.accidents.repository.AccidentRepository;
-import ru.job4j.accidents.repository.RuleRepository;
-import ru.job4j.accidents.repository.TypeRepository;
+import ru.job4j.accidents.repository.*;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
 public class SimpleAccidentService implements AccidentService {
 
-    private final AccidentRepository accidentRepository;
+    private final AccidentJdbcTemplate accidentRepository;
 
-    private final TypeRepository typeRepository;
+    private final TypeJdbcTemplate typeRepository;
 
-    private final RuleRepository ruleRepository;
+    private final RuleJdbcTemplate ruleRepository;
 
     @Override
     public Accident create(Accident accident, String[] ruleIds) {

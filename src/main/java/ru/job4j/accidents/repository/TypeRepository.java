@@ -7,6 +7,10 @@ import java.util.Optional;
 
 public interface TypeRepository {
 
+    AccidentType create(AccidentType type);
+
+    void deleteById(int id);
+
     Optional<AccidentType> findById(int id);
 
     Collection<AccidentType> findAll();
