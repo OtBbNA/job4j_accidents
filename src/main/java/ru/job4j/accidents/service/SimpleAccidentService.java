@@ -13,11 +13,11 @@ import java.util.Optional;
 @AllArgsConstructor
 public class SimpleAccidentService implements AccidentService {
 
-    private final AccidentJdbcTemplate accidentRepository;
+    private final AccidentHibernate accidentRepository;
 
-    private final TypeJdbcTemplate typeRepository;
+    private final TypeHibernate typeRepository;
 
-    private final RuleJdbcTemplate ruleRepository;
+    private final RuleHibernate ruleRepository;
 
     @Override
     public Accident create(Accident accident, String[] ruleIds) {
