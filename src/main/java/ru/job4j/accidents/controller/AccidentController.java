@@ -54,4 +54,10 @@ public class AccidentController {
         accidents.update(accident, ids);
         return "redirect:/index";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deletePage(@PathVariable int id, Model model) {
+        accidents.deleteById(id);
+        return "redirect:/index";
+    }
 }

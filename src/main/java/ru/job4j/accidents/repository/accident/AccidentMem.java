@@ -1,4 +1,4 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.accidents.repository.accident;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;

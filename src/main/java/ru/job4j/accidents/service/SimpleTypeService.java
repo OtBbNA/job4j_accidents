@@ -3,8 +3,7 @@ package ru.job4j.accidents.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.accidents.model.AccidentType;
-import ru.job4j.accidents.repository.TypeJdbcTemplate;
-import ru.job4j.accidents.repository.TypeRepository;
+import ru.job4j.accidents.repository.type.TypeJdbcTemplate;
 
 import java.util.Collection;
 import java.util.Optional;

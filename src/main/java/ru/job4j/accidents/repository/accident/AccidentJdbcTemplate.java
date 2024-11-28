@@ -1,10 +1,11 @@
-package ru.job4j.accidents.repository;
+package ru.job4j.accidents.repository.accident;
 
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.Rule;
+import ru.job4j.accidents.repository.type.TypeJdbcTemplate;
 
 import java.util.*;
 
