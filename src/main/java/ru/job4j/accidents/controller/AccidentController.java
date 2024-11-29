@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.accidents.model.Accident;
-import ru.job4j.accidents.service.AccidentService;
-import ru.job4j.accidents.service.RuleService;
-import ru.job4j.accidents.service.TypeService;
+import ru.job4j.accidents.service.*;
 
 @Controller
 @AllArgsConstructor
 public class AccidentController {
 
-    private final AccidentService accidents;
-    private final TypeService types;
-    private final RuleService rules;
+    private final AccidentSpringDataService accidents;
+    private final TypeSpringDataService types;
+    private final RuleSpringDataService rules;
 
     @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
