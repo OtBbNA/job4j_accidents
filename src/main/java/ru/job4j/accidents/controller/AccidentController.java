@@ -1,6 +1,7 @@
 package ru.job4j.accidents.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class AccidentController {
 
     @GetMapping("/createAccident")
     public String viewCreateAccident(Model model) {
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("types", types.findAll());
         model.addAttribute("rules", rules.findAll());
         return "accident/createAccident";
@@ -41,6 +43,7 @@ public class AccidentController {
             model.addAttribute("message", "Что-то пошло не так, возможно инцидент уже обработан");
             return "error/404";
         }
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("accident", accident.get());
         model.addAttribute("types", types.findAll());
         model.addAttribute("rules", rules.findAll());

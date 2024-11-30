@@ -26,6 +26,7 @@ public class LoginController {
         if (logout != null) {
             errorMessage = "You have been successfully logged out !!";
         }
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("errorMessage", errorMessage);
         return "/user/login";
     }
