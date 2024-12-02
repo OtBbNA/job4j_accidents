@@ -5,8 +5,3 @@ CREATE TABLE users (
   enabled boolean default true,
   authority_id int not null references authorities(id)
 );
-
-CREATE TABLE authorities (
-  id serial primary key,
-  authority VARCHAR(50) NOT NULL unique
-);

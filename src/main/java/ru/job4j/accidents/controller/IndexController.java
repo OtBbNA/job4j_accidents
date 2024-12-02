@@ -18,7 +18,6 @@ public class IndexController {
 
     @GetMapping({"/", "/index"})
     public String getIndexPage(Model model) {
-        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         model.addAttribute("accidents", accidentService.findAll());
         return "index";
     }

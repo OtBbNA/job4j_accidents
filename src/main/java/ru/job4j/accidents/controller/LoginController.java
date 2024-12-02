@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class LoginController {
-    @GetMapping("/user/login")
+
+    @GetMapping("/login")
     public String loginPage(@RequestParam(value = "error", required = false) String error,
                             @RequestParam(value = "logout", required = false) String logout,
                             Model model) {
