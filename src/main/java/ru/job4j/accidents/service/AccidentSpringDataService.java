@@ -48,6 +48,6 @@ public class AccidentSpringDataService implements AccidentService {
     }
 
     public Collection<Accident> findAll() {
-        return (Collection<Accident>) accidentRepository.findAll();
+        return (Collection<Accident>) accidentRepository.findAllWithRules();
     }
 }

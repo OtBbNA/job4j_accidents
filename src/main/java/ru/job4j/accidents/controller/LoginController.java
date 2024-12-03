@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @AllArgsConstructor
 public class LoginController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(RegControl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
     @GetMapping("/login")
     public String loginPage(@RequestParam(value = "error", required = false) String error,
